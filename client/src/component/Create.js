@@ -42,9 +42,11 @@ export default function Create() {
  
  // This following section will display the form that takes the input from the user.
  return (
-   <div>
+   <div style={{ width: '100%', height: '100%', backgroundColor: 'white', 
+   paddingLeft: '200px', paddingRight: '200px', paddingTop: '100px', paddingBottom: '100px'}}>
      <h3>Create New Record</h3>
      <form onSubmit={onSubmit}>
+     <br />
        <div className="form-group">
          <label htmlFor="title">Title</label>
          <input
@@ -85,6 +87,7 @@ export default function Create() {
            onChange={(e) => updateForm({ rating: e.target.value })}
          />
        </div>
+       <br />
        <div className="form-group">
          <input
            type="submit"
