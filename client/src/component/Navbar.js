@@ -18,9 +18,8 @@ export default function Navbar() {
           <p class = "home-icon">
             <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Home</button>
           </p>
-          <p class = "admin-icon">
-            <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Admin</button>
-          </p>
+          <NavLink to="/admin" className ="btn btn-outline-success btn-lg">Admin
+          </NavLink>
     </nav>
     </div>
  );
