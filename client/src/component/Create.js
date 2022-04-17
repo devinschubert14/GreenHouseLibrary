@@ -45,6 +45,7 @@ export default function Create() {
    <div>
      <h3>Add Book to Library</h3>
      <form onSubmit={onSubmit}>
+     <br />
        <div className="form-group">
          <label htmlFor="title">Title</label>
          <input
@@ -85,6 +86,7 @@ export default function Create() {
            onChange={(e) => updateForm({ rating: e.target.value })}
          />
        </div>
+       <br />
        <div className="form-group">
          <input
            type="submit"

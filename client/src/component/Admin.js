@@ -47,6 +47,7 @@ export default function Admin() {
    <div>
      <h3>Admin Database Connect</h3>
      <form onSubmit={onSubmit}>
+     <br />
        <div className="form-group">
          <label htmlFor="user">User: </label>
          <input
