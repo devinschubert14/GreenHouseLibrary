@@ -26,12 +26,13 @@ export default function Admin() {
       return;
     }
 
-    const book = await response.json();
-    if (!book) {
+    const acct = await response.json();
+    if (!acct) {
       window.alert(`Record with id ${id} not found`);
       navigate("/");
       return;
     }
+    console.log(acct)
  }
  
  // This following section will display the form that takes input from the user to update the data.

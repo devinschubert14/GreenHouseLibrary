@@ -1,6 +1,7 @@
 import React from "react";
 
 import Create from './Create';
+import Admin from './Admin'
 // We import bootstrap to make our application look better.
 import "bootstrap/dist/css/bootstrap.css";
  
@@ -10,21 +11,17 @@ import { NavLink } from "react-router-dom";
 // Here, we display our Navbar
 export default function Navbar() {
  return (
-   <div>
+   <div >
      <nav className="navbar navbar-expand-lg navbar-light .bg-primary">
         <a href = "http://www.thegreenhousecenter.org">
-          <img className = "navbar-brand" src={require('./Greenhouselogo.png')}/>
+          <img className = "navbar-brand" src={require('./imgs/Greenhouselogo.png')}/>
         </a>
           <p class = "home-icon">
             <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Home</button>
           </p>
-          <p class = "admin-icon">
-            <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Admin</button>
-          </p>
-   <div>
-       <nav>
-           <Create/>
-     </nav>
-   </div>
+          <NavLink to="/admin" className ="btn btn-outline-success btn-lg">Admin
+          </NavLink>
+    </nav>
+    </div>
  );
 }

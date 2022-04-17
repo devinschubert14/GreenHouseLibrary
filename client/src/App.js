@@ -7,11 +7,13 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./component/Navbar";
 import Create from "./component/Create";
 import Admin from "./component/Admin"
+import Home from "./component/Home";
 const App = () => {
  return (
    <div>
-     <Navbar />
      <Routes>
+       <Route path="/" element={<Home/>} />
+       <Route path="/admin" element={<Admin />} />
        <Route path="/create" element={<Create />} />
        <Route path="/admin" element={<Admin />} />
      </Routes>
