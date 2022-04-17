@@ -13,7 +13,7 @@ export default function Navbar() {
    <div >
      <nav className="navbar navbar-expand-lg navbar-light .bg-primary">
         <a href = "http://www.thegreenhousecenter.org">
-          <img className = "navbar-brand" src={require('./Greenhouselogo.png')}/>
+          <img className = "navbar-brand" src={require('./imgs/Greenhouselogo.png')}/>
         </a>
           <p class = "home-icon">
             <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Home</button>
@@ -21,10 +21,7 @@ export default function Navbar() {
           <p class = "admin-icon">
             <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Admin</button>
           </p>
-   <div>
-       <nav>
-           <Admin/>
-     </nav>
-   </div>
+    </nav>
+    </div>
  );
 }
