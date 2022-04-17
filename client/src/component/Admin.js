@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
  
-export default function Edit() {
+export default function Admin() {
  const [form, setForm] = useState({
    title: "",
    author: "",
@@ -46,10 +46,9 @@ export default function Edit() {
  
  async function onSubmit(e) {
    e.preventDefault();
-   const editedPerson = {
-     name: form.name,
-     position: form.position,
-     level: form.level,
+   const accountInfo = {
+     user: form.user,
+     pass: form.pass,
    };
  
    // This will send a post request to update the data in the database.
@@ -63,4 +62,42 @@ export default function Edit() {
  
    navigate("/");
  }
+ 
+ // This following section will display the form that takes input from the user to update the data.
+ return (
+   <div>
+     <h3>Book Database Connect</h3>
+     <form onSubmit={onSubmit}>
+       <div className="form-group">
+         <label htmlFor="user">User: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="user"
+           value={form.user}
+           onChange={(e) => updateForm({ title: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="user">Pass: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="user"
+           value={form.pass}
+           onChange={(e) => updateForm({ title: e.target.value })}
+         />
+       </div>
+       <br />
+ 
+       <div className="form-group">
+         <input
+           type="submit"
+           value="Login"
+           className="btn btn-primary"
+         />
+       </div>
+     </form>
+   </div>
+ );
 }
