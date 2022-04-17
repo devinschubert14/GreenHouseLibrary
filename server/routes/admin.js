@@ -12,54 +12,42 @@ const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
 
 
-// This section will help you get a list of all the records.
-recordRoutes.route("/books").get(function (req, res) {
-  let db_connect = dbo.getDb("books");
-  db_connect
-    .collection("books")
-    .find({})
-    .toArray(function (err, result) {
-      if (err) throw err;
-      res.json(result);
-    });
-});
-
 // This section will help you get a single record by id
-recordRoutes.route("/books/:id").get(function (req, res) {
+recordRoutes.route("/admin/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId( req.params.id )};
   db_connect
-      .collection("books")
+      .collection("admin")
       .findOne(myquery, function (err, result) {
         if (err) throw err;
         res.json(result);
       });
 });
 //This section will help get a single record by id
-recordRoutes.route("/books/").get(function (req, res){
-    let db_connect = dbo.getDb();
-    let myquery = { _id: ObjectId( req.params.id )};
-    db_connect
-        .collection("records")
-        .findOne(myquery, function(err, result){
-            if(err) throw err;
-            res.json(result);
-        });
+recordRoutes.route("/admin").get(function (req, res){
+  let db_connect = dbo.getDb();
+  let findUser = { 
+    user: req.body.user,
+  };
+  console.log(findUser);
+  db_connect
+      .collection("admin")
+      .find(findUser, function(err, result){
+          if(err) throw err;
+          res.json(result);
+      });
 });
 // This section will help you create a new record.
-recordRoutes.route("/books/add").post(function (req, response) {
+recordRoutes.route("/admin/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
-    title: req.body.title,
-    position: req.body.author,
-    isbn: req.body.isbn,
-    rating: req.body.rating,
+    user: req.body.user,
+    pass: req.body.pass,
   };
-  db_connect.collection("books").insertOne(myobj, function (err, res) {
+  db_connect.collection("admin").insertOne(myobj, function (err, res) {
     if (err) throw err;
     response.json(res);
   });
-  console.log(myobj)
 });
 
 // This section will help you update a record by id.
@@ -68,10 +56,8 @@ recordRoutes.route("/update/:id").post(function (req, response) {
   let myquery = { _id: ObjectId( req.params.id )};  
   let newvalues = {    
     $set: {      
-      title: req.body.title,     
-      authior: req.body.author,      
-      isbn: req.body.isbn,  
-      rating: req.body.rating,  
+      user: req.body.user,     
+      pass: req.body.pass,       
     }, 
     }
 });
@@ -80,7 +66,7 @@ recordRoutes.route("/update/:id").post(function (req, response) {
 recordRoutes.route("/:id").delete((req, response) => {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId( req.params.id )};
-  db_connect.collection("books").deleteOne(myquery, function (err, obj) {
+  db_connect.collection("admin").deleteOne(myquery, function (err, obj) {
     if (err) throw err;
     console.log("1 book deleted");
     response.json(obj);

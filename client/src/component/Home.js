@@ -10,6 +10,6 @@ import Navbar from "./Navbar"
 // Here, we display our Navbar
 export default function Home() {
  return (
-   <Navbar />
+     <Create />
  );
 }
