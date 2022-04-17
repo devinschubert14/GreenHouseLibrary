@@ -15,9 +15,8 @@ export default function Navbar() {
         <a href = "http://www.thegreenhousecenter.org">
           <img className = "navbar-brand" src={require('./imgs/Greenhouselogo.png')}/>
         </a>
-          <p class = "home-icon">
-            <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Home</button>
-          </p>
+        <NavLink to="/" className ="btn btn-outline-success btn-lg">Home
+          </NavLink>
           <NavLink to="/admin" className ="btn btn-outline-success btn-lg">Admin
           </NavLink>
     </nav>

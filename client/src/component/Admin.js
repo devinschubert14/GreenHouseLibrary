@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
- 
+import { Route, Routes } from "react-router-dom";
+import Create from './Create'
 export default function Admin() {
  const [form, setForm] = useState({
-   title: "",
-   author: "",
-   isbn: "",
-   rating: "",
+   user: "",
+   pass: "",
  });
- const params = useParams();
  const navigate = useNavigate();
  
  function updateForm(value) {
@@ -16,10 +14,10 @@ export default function Admin() {
       return { ...prev, ...value };
     });
   }
+  
  async function onSubmit(e) {
-    const id = params.id.toString();
-    const response = await fetch(`http://localhost:5000/server/admin/${params.id.toString()}`);
-
+    const testUser = { ...form };
+    const response = await fetch(`http://localhost:5000/admin/`);
     if (!response.ok) {
       const message = `An error has occurred: ${response.statusText}`;
       window.alert(message);
@@ -27,18 +25,23 @@ export default function Admin() {
     }
 
     const acct = await response.json();
+    console.log(test);
     if (!acct) {
-      window.alert(`Record with id ${id} not found`);
+      window.alert(`Record with id ${testUser.body.user} not found`);
       navigate("/");
       return;
     }
-    console.log(acct)
+    else
+        {
+            console.log("Successully found element");
+            <Route path="/create" element={<Create />} />
+        }
  }
  
  // This following section will display the form that takes input from the user to update the data.
  return (
    <div>
-     <h3>Book Database Connect</h3>
+     <h3>Admin Database Connect</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
          <label htmlFor="user">User: </label>
@@ -47,17 +50,17 @@ export default function Admin() {
            className="form-control"
            id="user"
            value={form.user}
-           onChange={(e) => updateForm({ title: e.target.value })}
+           onChange={(e) => updateForm({ user: e.target.value })}
          />
        </div>
        <div className="form-group">
-         <label htmlFor="user">Pass: </label>
+         <label htmlFor="pass">Pass: </label>
          <input
            type="text"
            className="form-control"
-           id="user"
+           id="pass"
            value={form.pass}
-           onChange={(e) => updateForm({ title: e.target.value })}
+           onChange={(e) => updateForm({ pass: e.target.value })}
          />
        </div>
        <br />

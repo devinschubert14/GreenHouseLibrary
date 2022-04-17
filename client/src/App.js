@@ -11,6 +11,7 @@ import Home from "./component/Home";
 const App = () => {
  return (
    <div>
+     <Navbar/>
      <Routes>
        <Route path="/" element={<Home/>} />
        <Route path="/admin" element={<Admin />} />
