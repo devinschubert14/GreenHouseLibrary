@@ -1,14 +1,21 @@
-import logo from './logo.svg';
-import Navbar from './component/Navbar'
-import './App.css';
-
-function App() {
-  return (
-    <div>
-      <Navbar>
-      </Navbar>
-    </div>
-  );
-}
-
+import React from "react";
+ 
+// We use Route in order to define the different routes of our application
+import { Route, Routes } from "react-router-dom";
+ 
+// We import all the components we need in our app
+import Navbar from "./component/Navbar";
+import Create from "./component/Create";
+ 
+const App = () => {
+ return (
+   <div>
+     <Navbar />
+     <Routes>
+       <Route path="/create" element={<Create />} />
+     </Routes>
+   </div>
+ );
+};
+ 
 export default App;
