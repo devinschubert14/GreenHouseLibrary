@@ -33,6 +33,7 @@ recordRoutes.route("/book/:id").get(function (req, res) {
       .findOne(myquery, function (err, result) {
         if (err) throw err;
         res.json(result);
+        console.log(res);
       });
 });
 
