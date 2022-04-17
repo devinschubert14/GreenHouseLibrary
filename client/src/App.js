@@ -4,14 +4,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
  
 // We import all the components we need in our app
-import Navbar from "./component/Navbar";
+import MainNavbar from "./component/MainNavbar";
 import Create from "./component/Create";
 import Admin from "./component/Admin"
 import Home from "./component/Home";
 const App = () => {
  return (
    <div>
-     <Navbar/>
+     <MainNavbar/>
      <Routes>
        <Route path="/" element={<Home/>} />
        <Route path="/admin" element={<Admin />} />
