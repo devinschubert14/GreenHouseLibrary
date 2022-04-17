@@ -8,7 +8,7 @@ import MainNavbar from "./component/MainNavbar";
 import Create from "./component/Create";
 import Admin from "./component/Admin"
 import Home from "./component/Home";
-import DisplayResults from "./component/searchResults";
+import PreviewBook from "./component/PreviewBook";
 const App = () => {
  return (
    <div>
@@ -18,7 +18,7 @@ const App = () => {
        <Route path="/admin" element={<Admin />} />
        <Route path="/create" element={<Create />} />
        <Route path="/admin" element={<Admin />} />
-			 <Route path="/search-results" element = {<DisplayResults />} />
+			 <Route path="/previewBook" element = {<PreviewBook id={'625baa24169d11052cfeca3c'} />} />
      </Routes>
    </div>
  );
