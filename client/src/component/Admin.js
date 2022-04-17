@@ -37,8 +37,10 @@ export default function Admin() {
  
  // This following section will display the form that takes input from the user to update the data.
  return (
+  <div style={{ width: '100%', height: '100%', backgroundColor: 'white', 
+                  paddingLeft: '200px', paddingRight: '200px', paddingTop: '100px', paddingBottom: '100px'}}>
    <div>
-     <h3>Book Database Connect</h3>
+     <h3  style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>Book Database Connect</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
          <label htmlFor="user">User: </label>
@@ -69,7 +71,13 @@ export default function Admin() {
            className="btn btn-primary"
          />
        </div>
+       <div>
+       <p>
+          <img width="300"className="rounded mx-auto d-block" src={require('./imgs/sitting_on_reading_books_md_nwm_v2.gif')}/>
+        </p>
+       </div>
      </form>
+   </div>
    </div>
  );
 }

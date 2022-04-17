@@ -11,17 +11,20 @@ import { NavLink } from "react-router-dom";
 // Here, we display our Navbar
 export default function Navbar() {
  return (
-   <div >
-     <nav className="navbar navbar-expand-lg navbar-light .bg-primary">
-        <a href = "http://www.thegreenhousecenter.org">
-          <img className = "navbar-brand" src={require('./imgs/Greenhouselogo.png')}/>
-        </a>
-          <p class = "home-icon">
-            <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Home</button>
-          </p>
-          <NavLink to="/admin" className ="btn btn-outline-success btn-lg">Admin
-          </NavLink>
-    </nav>
+   <div>
+          <nav className="navbar navbar-expand-lg navbar-light .bg-primary">
+              <a href = "http://www.thegreenhousecenter.org">
+                <img className = "navbar-brand" src={require('./imgs/Greenhouselogo.png')}/>
+              </a>
+              <div style={{ width: '100%', height: '100%', backgroundColor: 'white', 
+                        paddingLeft: '100px', paddingRight: '100px', paddingTop: '50px', paddingBottom: '100px'}}>
+                <p class = "home-icon">
+                  <button type="button" className="btn btn-outline-success btn-lg" data-bs-toggle="button" autocomplete="off">Home</button>
+                </p>
+                <NavLink to="/admin" className ="btn btn-outline-success btn-lg" data-bs-toggle="button">Admin
+                </NavLink>
+              </div>
+          </nav>
     </div>
  );
 }
