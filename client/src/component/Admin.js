@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import { Route, Routes } from "react-router-dom";
 import Create from './Create'
+
+
 export default function Admin() {
  const [form, setForm] = useState({
    user: "",
