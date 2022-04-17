@@ -1,5 +1,5 @@
 import React from "react";
-
+import Navbar, { NavbarBrand } from 'react-bootstrap';
 import Create from './Create';
 import Admin from './Admin'
 // We import bootstrap to make our application look better.
@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
 
 // Here, we display our Navbar
-export default function Navbar() {
+export default function MainNavbar() {
  return (
    <div className = "text-center mt-4 mb-4 px-5">
      <nav className="navbar navbar-expand-lg .navbar-light .bg-primary" >

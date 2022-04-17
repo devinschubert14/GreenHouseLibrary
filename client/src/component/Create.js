@@ -42,9 +42,8 @@ export default function Create() {
  
  // This following section will display the form that takes the input from the user.
  return (
-   <div style={{ width: '100%', height: '100%', backgroundColor: 'white', 
-   paddingLeft: '200px', paddingRight: '200px', paddingTop: '100px', paddingBottom: '100px'}}>
-     <h3>Create New Record</h3>
+   <div>
+     <h3>Add Book to Library</h3>
      <form onSubmit={onSubmit}>
      <br />
        <div className="form-group">
